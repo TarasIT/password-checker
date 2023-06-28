@@ -1,0 +1,25 @@
+<ul class="indicators">
+  <li
+    [ngClass]="{
+        'indicator-item': true,
+        'easy-password':  passwordStrength === 'short' || passwordStrength === 'easy',   
+        'medium-password': passwordStrength === 'medium',
+        'strong-password': passwordStrength === 'strong',
+      }"
+  ></li>
+  <li
+    [ngClass]="{
+        'indicator-item': true,
+        'easy-password': passwordStrength === 'short' ,
+        'medium-password': passwordStrength === 'medium',
+        'strong-password': passwordStrength === 'strong',
+      }"
+  ></li>
+  <li
+    [ngClass]="{
+        'indicator-item': true,
+        'easy-password': passwordStrength === 'short' ,
+        'strong-password': passwordStrength === 'strong',
+      }"
+  ></li>
+</ul>

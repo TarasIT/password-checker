@@ -1,27 +1,34 @@
-# PasswordChecker
+Angular Password Strength Checker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+This is an Angular application that provides a real-time password strength checker. It includes a field for entering a password and three sections that dynamically display the strength of the password based on certain criteria.
 
-## Development server
+Password Strength Calculation
+The strength of a password is determined as follows:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+If the password contains only letters, digits, or symbols, it is considered easy.
+If the password is a combination of letters-symbols, letters-digits, or digits-symbols, it is considered medium.
+If the password contains letters, symbols, and numbers, it is considered strong.
+Password Strength Indicator
+The sections displaying the password strength are color-coded based on the following rules:
 
-## Code scaffolding
+If the password field is empty, all sections will be gray.
+If the password field has less than 8 characters, all sections will be red.
+If the password is easy, the first section will be red, and the rest will be gray.
+If the password is medium, the first two sections will be yellow, and the last section will be gray.
+If the password is strong, all sections will be green.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Getting Started
+To get started with the application, follow these steps:
 
-## Build
+Clone this repository.
+Install the dependencies: npm install.
+Run the development server: ng serve.
+Open your browser and navigate to http://localhost:4200 to see the application.
+Feel free to modify and customize the application according to your requirements.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Technologies Used
+The following technologies and frameworks were used to build this Angular application:
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular
+HTML
+CSS

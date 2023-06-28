@@ -1,0 +1,38 @@
+.indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator-item {
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+  background-color: gray;
+  opacity: 1;
+  transition: opacity 0.3s;
+  transition: transform 0.3s;
+}
+
+.indicator-item:hover,
+.indicator-item:focus {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.indicator-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.easy-password {
+  background-color: red;
+}
+
+.medium-password {
+  background-color: yellow;
+}
+
+.strong-password {
+  background-color: green;
+}

@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200");
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("./assets/images/bg.jpeg");
+  background-size: cover;
+  -webkit-animation: slidein 50s;
+  animation: slidein 50s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: auto;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: auto;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: auto;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: auto;
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(75, 75, 250, 0.3);
+  border-radius: 3px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
