@@ -2,7 +2,8 @@
   <li
     [ngClass]="{
         'indicator-item': true,
-        'easy-password':  passwordStrength === 'short' || passwordStrength === 'easy',   
+        'easy-password':  passwordStrength === 'short' 
+        || passwordStrength === 'easy',   
         'medium-password': passwordStrength === 'medium',
         'strong-password': passwordStrength === 'strong',
       }"
