@@ -22,13 +22,12 @@ export class AppComponent {
   }
 
   validatePassword() {
-    const hasNumbers = /^\d*$/.test(this.password);
-    const hasLetters = /^[a-zA-Z]*$/.test(this.password);
-    const hasSymbols = /^[^a-zA-Z0-9]*$/.test(this.password);
-    const hasLettersAndNumbers = /^[a-zA-Z0-9]*$/.test(this.password);
-    const hasNumbersAndSymbols = /^[^a-zA-Z]*$/.test(this.password);
-    const hasLettersAndSymbols = /^[^\d]*$/.test(this.password);
-    const hasAllCharacters = /^[\p{L}\p{N}\W_]+$/u.test(this.password);
+    const hasNumbers = /[0-9]/.test(this.password);
+    const hasLetters = /\p{L}/u.test(this.password);
+    const hasSymbols = /[^\p{L}\p{N}]/u.test(this.password);
+    const hasLettersAndNumbers = hasNumbers && hasLetters && !hasSymbols;
+    const hasNumbersAndSymbols = hasNumbers && !hasLetters && hasSymbols;
+    const hasLettersAndSymbols = !hasNumbers && hasLetters && hasSymbols;
 
     const shortPassword = this.password.length >= 1 && this.password.length < 8;
 
@@ -36,14 +35,15 @@ export class AppComponent {
       case shortPassword:
         this.passwordStrength = 'short';
         break;
-      case this.password && (hasNumbers || hasLetters || hasSymbols):
+      case (hasNumbers && !hasLetters && !hasSymbols) ||
+        (!hasNumbers && hasLetters && !hasSymbols) ||
+        (!hasNumbers && !hasLetters && hasSymbols):
         this.passwordStrength = 'easy';
         break;
-      case this.password &&
-        (hasLettersAndNumbers || hasNumbersAndSymbols || hasLettersAndSymbols):
+      case hasLettersAndNumbers || hasNumbersAndSymbols || hasLettersAndSymbols:
         this.passwordStrength = 'medium';
         break;
-      case this.password && hasAllCharacters:
+      case hasNumbers && hasLetters && hasSymbols:
         this.passwordStrength = 'strong';
         break;
       default:
