@@ -24,15 +24,3 @@
 .indicator-item:not(:last-child) {
   margin-right: 30px;
 }
-
-.easy-password {
-  background-color: red;
-}
-
-.medium-password {
-  background-color: yellow;
-}
-
-.strong-password {
-  background-color: green;
-}
