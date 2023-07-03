@@ -10,11 +10,6 @@ export class AppComponent {
   passwordStrength: string = '';
   placeholderText: string = 'Type a password...';
   password: string = '';
-  showPassword: boolean = false;
-
-  togglePasswordVisibility() {
-    this.showPassword = !this.showPassword;
-  }
 
   handleInput(value: string) {
     this.password = value;

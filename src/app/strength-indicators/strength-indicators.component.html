@@ -1,26 +1,9 @@
 <ul class="indicators">
-  <li
-    [ngClass]="{
-        'indicator-item': true,
-        'easy-password':  passwordStrength === 'short' 
-        || passwordStrength === 'easy',   
-        'medium-password': passwordStrength === 'medium',
-        'strong-password': passwordStrength === 'strong',
-      }"
-  ></li>
-  <li
-    [ngClass]="{
-        'indicator-item': true,
-        'easy-password': passwordStrength === 'short' ,
-        'medium-password': passwordStrength === 'medium',
-        'strong-password': passwordStrength === 'strong',
-      }"
-  ></li>
-  <li
-    [ngClass]="{
-        'indicator-item': true,
-        'easy-password': passwordStrength === 'short' ,
-        'strong-password': passwordStrength === 'strong',
-      }"
-  ></li>
+  <ng-container *ngFor="let password of passwords; let isFirst = first">
+    <li
+      class="indicator-item"
+      *ngIf="!isFirst"
+      [ngStyle]="changeBgColor(password)"
+    ></li>
+  </ng-container>
 </ul>
